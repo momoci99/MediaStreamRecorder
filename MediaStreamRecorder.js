@@ -1094,6 +1094,14 @@ function MediaRecorderWrapper(mediaStream) {
             mimeType: self.mimeType
         };
 
+        if (self.videoBitsPerSecond) {
+           recorderHints.videoBitsPerSecond = self.videoBitsPerSecond
+        }
+      
+        if (self.audioBitsPerSecond) {
+           recorderHints.audioBitsPerSecond = self.audioBitsPerSecond
+        }
+
         if (!self.disableLogs && !__disableLogs) {
             console.log('Passing following params over MediaRecorder API.', recorderHints);
         }
